@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC " -//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry location="C:\Users\song\.m2\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar"/>
+
+	<context id="mysql" targetRuntime="MyBatis3">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+		
+		<commentGenerator>
+			<property name="suppressDate" value="false"/>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+		
+		<!-- mysql数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+						connectionURL="jdbc:mysql://localhost:3306/mbs?serverTimezone=Asia/Shanghai"
+						userId="mbs"
+						password="mbs">
+		</jdbcConnection>
+		
+		<!-- 生成model实体类文件位置 -->
+		<javaModelGenerator targetPackage="com.hanz.domain.mbs"
+							targetProject="src/main/java">
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+		
+		<!-- 生成mapper.xml配置文件位置 -->
+		<sqlMapGenerator targetPackage="com.hanz.mapper.mbs" targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+		
+		<!-- 生成mapper接口文件位置 -->
+		<javaClientGenerator targetPackage="com.hanz.dao.mbs" targetProject="src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+		
+		<table tableName="s9supplier" domainObjectName="S9supplier" 
+				enableCountByExample="false" enableUpdateByExample="false"
+				enableDeleteByExample="false" enableSelectByExample="false"
+				selectByExampleQueryId="false">
+		</table>
+	</context>
+
+
+
+
+</generatorConfiguration>

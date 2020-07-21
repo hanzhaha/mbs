@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hanz.dao.mbs.S9supplierMapper" >
+  <resultMap id="BaseResultMap" type="com.hanz.domain.mbs.S9supplier" >
+    <id column="pgs_id" property="pgsId" jdbcType="INTEGER" />
+    <result column="pgs_code" property="pgsCode" jdbcType="VARCHAR" />
+    <result column="pgs_name" property="pgsName" jdbcType="VARCHAR" />
+    <result column="pgs_org" property="pgsOrg" jdbcType="VARCHAR" />
+    <result column="pgs_site" property="pgsSite" jdbcType="VARCHAR" />
+    <result column="pgs_supplierType" property="pgsSuppliertype" jdbcType="VARCHAR" />
+    <result column="pgs_parent" property="pgsParent" jdbcType="INTEGER" />
+    <result column="pgs_customerCode" property="pgsCustomercode" jdbcType="VARCHAR" />
+    <result column="pgs_homepage" property="pgsHomepage" jdbcType="VARCHAR" />
+    <result column="pgs_business" property="pgsBusiness" jdbcType="VARCHAR" />
+    <result column="pgs_capital" property="pgsCapital" jdbcType="VARCHAR" />
+    <result column="pgs_currency" property="pgsCurrency" jdbcType="VARCHAR" />
+    <result column="pgs_operationSituation" property="pgsOperationsituation" jdbcType="VARCHAR" />
+    <result column="pgs_registrationNumber" property="pgsRegistrationnumber" jdbcType="VARCHAR" />
+    <result column="pgs_nuns" property="pgsNuns" jdbcType="VARCHAR" />
+    <result column="pgs_address" property="pgsAddress" jdbcType="VARCHAR" />
+    <result column="pgs_transitClause" property="pgsTransitclause" jdbcType="VARCHAR" />
+    <result column="pgs_offshore" property="pgsOffshore" jdbcType="VARCHAR" />
+    <result column="pgs_paymentTerm" property="pgsPaymentterm" jdbcType="VARCHAR" />
+    <result column="pgs_disabled" property="pgsDisabled" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pgs_id, pgs_code, pgs_name, pgs_org, pgs_site, pgs_supplierType, pgs_parent, pgs_customerCode, 
+    pgs_homepage, pgs_business, pgs_capital, pgs_currency, pgs_operationSituation, pgs_registrationNumber, 
+    pgs_nuns, pgs_address, pgs_transitClause, pgs_offshore, pgs_paymentTerm, pgs_disabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from s9supplier
+    where pgs_id = #{pgsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from s9supplier
+    where pgs_id = #{pgsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hanz.domain.mbs.S9supplier" >
+    insert into s9supplier (pgs_id, pgs_code, pgs_name, 
+      pgs_org, pgs_site, pgs_supplierType, 
+      pgs_parent, pgs_customerCode, pgs_homepage, 
+      pgs_business, pgs_capital, pgs_currency, 
+      pgs_operationSituation, pgs_registrationNumber, 
+      pgs_nuns, pgs_address, pgs_transitClause, 
+      pgs_offshore, pgs_paymentTerm, pgs_disabled
+      )
+    values (#{pgsId,jdbcType=INTEGER}, #{pgsCode,jdbcType=VARCHAR}, #{pgsName,jdbcType=VARCHAR}, 
+      #{pgsOrg,jdbcType=VARCHAR}, #{pgsSite,jdbcType=VARCHAR}, #{pgsSuppliertype,jdbcType=VARCHAR}, 
+      #{pgsParent,jdbcType=INTEGER}, #{pgsCustomercode,jdbcType=VARCHAR}, #{pgsHomepage,jdbcType=VARCHAR}, 
+      #{pgsBusiness,jdbcType=VARCHAR}, #{pgsCapital,jdbcType=VARCHAR}, #{pgsCurrency,jdbcType=VARCHAR}, 
+      #{pgsOperationsituation,jdbcType=VARCHAR}, #{pgsRegistrationnumber,jdbcType=VARCHAR}, 
+      #{pgsNuns,jdbcType=VARCHAR}, #{pgsAddress,jdbcType=VARCHAR}, #{pgsTransitclause,jdbcType=VARCHAR}, 
+      #{pgsOffshore,jdbcType=VARCHAR}, #{pgsPaymentterm,jdbcType=VARCHAR}, #{pgsDisabled,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hanz.domain.mbs.S9supplier" >
+    insert into s9supplier
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pgsId != null" >
+        pgs_id,
+      </if>
+      <if test="pgsCode != null" >
+        pgs_code,
+      </if>
+      <if test="pgsName != null" >
+        pgs_name,
+      </if>
+      <if test="pgsOrg != null" >
+        pgs_org,
+      </if>
+      <if test="pgsSite != null" >
+        pgs_site,
+      </if>
+      <if test="pgsSuppliertype != null" >
+        pgs_supplierType,
+      </if>
+      <if test="pgsParent != null" >
+        pgs_parent,
+      </if>
+      <if test="pgsCustomercode != null" >
+        pgs_customerCode,
+      </if>
+      <if test="pgsHomepage != null" >
+        pgs_homepage,
+      </if>
+      <if test="pgsBusiness != null" >
+        pgs_business,
+      </if>
+      <if test="pgsCapital != null" >
+        pgs_capital,
+      </if>
+      <if test="pgsCurrency != null" >
+        pgs_currency,
+      </if>
+      <if test="pgsOperationsituation != null" >
+        pgs_operationSituation,
+      </if>
+      <if test="pgsRegistrationnumber != null" >
+        pgs_registrationNumber,
+      </if>
+      <if test="pgsNuns != null" >
+        pgs_nuns,
+      </if>
+      <if test="pgsAddress != null" >
+        pgs_address,
+      </if>
+      <if test="pgsTransitclause != null" >
+        pgs_transitClause,
+      </if>
+      <if test="pgsOffshore != null" >
+        pgs_offshore,
+      </if>
+      <if test="pgsPaymentterm != null" >
+        pgs_paymentTerm,
+      </if>
+      <if test="pgsDisabled != null" >
+        pgs_disabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pgsId != null" >
+        #{pgsId,jdbcType=INTEGER},
+      </if>
+      <if test="pgsCode != null" >
+        #{pgsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsName != null" >
+        #{pgsName,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOrg != null" >
+        #{pgsOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsSite != null" >
+        #{pgsSite,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsSuppliertype != null" >
+        #{pgsSuppliertype,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsParent != null" >
+        #{pgsParent,jdbcType=INTEGER},
+      </if>
+      <if test="pgsCustomercode != null" >
+        #{pgsCustomercode,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsHomepage != null" >
+        #{pgsHomepage,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsBusiness != null" >
+        #{pgsBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsCapital != null" >
+        #{pgsCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsCurrency != null" >
+        #{pgsCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOperationsituation != null" >
+        #{pgsOperationsituation,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsRegistrationnumber != null" >
+        #{pgsRegistrationnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsNuns != null" >
+        #{pgsNuns,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsAddress != null" >
+        #{pgsAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsTransitclause != null" >
+        #{pgsTransitclause,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOffshore != null" >
+        #{pgsOffshore,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsPaymentterm != null" >
+        #{pgsPaymentterm,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsDisabled != null" >
+        #{pgsDisabled,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hanz.domain.mbs.S9supplier" >
+    update s9supplier
+    <set >
+      <if test="pgsCode != null" >
+        pgs_code = #{pgsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsName != null" >
+        pgs_name = #{pgsName,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOrg != null" >
+        pgs_org = #{pgsOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsSite != null" >
+        pgs_site = #{pgsSite,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsSuppliertype != null" >
+        pgs_supplierType = #{pgsSuppliertype,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsParent != null" >
+        pgs_parent = #{pgsParent,jdbcType=INTEGER},
+      </if>
+      <if test="pgsCustomercode != null" >
+        pgs_customerCode = #{pgsCustomercode,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsHomepage != null" >
+        pgs_homepage = #{pgsHomepage,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsBusiness != null" >
+        pgs_business = #{pgsBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsCapital != null" >
+        pgs_capital = #{pgsCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsCurrency != null" >
+        pgs_currency = #{pgsCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOperationsituation != null" >
+        pgs_operationSituation = #{pgsOperationsituation,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsRegistrationnumber != null" >
+        pgs_registrationNumber = #{pgsRegistrationnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsNuns != null" >
+        pgs_nuns = #{pgsNuns,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsAddress != null" >
+        pgs_address = #{pgsAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsTransitclause != null" >
+        pgs_transitClause = #{pgsTransitclause,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsOffshore != null" >
+        pgs_offshore = #{pgsOffshore,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsPaymentterm != null" >
+        pgs_paymentTerm = #{pgsPaymentterm,jdbcType=VARCHAR},
+      </if>
+      <if test="pgsDisabled != null" >
+        pgs_disabled = #{pgsDisabled,jdbcType=BIT},
+      </if>
+    </set>
+    where pgs_id = #{pgsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hanz.domain.mbs.S9supplier" >
+    update s9supplier
+    set pgs_code = #{pgsCode,jdbcType=VARCHAR},
+      pgs_name = #{pgsName,jdbcType=VARCHAR},
+      pgs_org = #{pgsOrg,jdbcType=VARCHAR},
+      pgs_site = #{pgsSite,jdbcType=VARCHAR},
+      pgs_supplierType = #{pgsSuppliertype,jdbcType=VARCHAR},
+      pgs_parent = #{pgsParent,jdbcType=INTEGER},
+      pgs_customerCode = #{pgsCustomercode,jdbcType=VARCHAR},
+      pgs_homepage = #{pgsHomepage,jdbcType=VARCHAR},
+      pgs_business = #{pgsBusiness,jdbcType=VARCHAR},
+      pgs_capital = #{pgsCapital,jdbcType=VARCHAR},
+      pgs_currency = #{pgsCurrency,jdbcType=VARCHAR},
+      pgs_operationSituation = #{pgsOperationsituation,jdbcType=VARCHAR},
+      pgs_registrationNumber = #{pgsRegistrationnumber,jdbcType=VARCHAR},
+      pgs_nuns = #{pgsNuns,jdbcType=VARCHAR},
+      pgs_address = #{pgsAddress,jdbcType=VARCHAR},
+      pgs_transitClause = #{pgsTransitclause,jdbcType=VARCHAR},
+      pgs_offshore = #{pgsOffshore,jdbcType=VARCHAR},
+      pgs_paymentTerm = #{pgsPaymentterm,jdbcType=VARCHAR},
+      pgs_disabled = #{pgsDisabled,jdbcType=BIT}
+    where pgs_id = #{pgsId,jdbcType=INTEGER}
+  </update>
+</mapper>

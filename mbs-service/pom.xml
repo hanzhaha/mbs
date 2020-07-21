@@ -9,6 +9,7 @@
   </parent>
   
   <artifactId>mbs-service</artifactId>
+  <packaging>jar</packaging>
   <name>MBS SERVICE</name>
 
   <properties>
@@ -25,7 +26,6 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>mbs-model</artifactId>
       <version>${project.version}</version>
-      <scope>compile</scope>
     </dependency>
   </dependencies>
 </project>
