@@ -15,6 +15,7 @@ public class Test {
 
 	@GetMapping(path = "/hello")
 	public S9supplier hello() {
+		System.out.print(111);
 		return supplierService.selectS9supplier(507);
 	}
 }
