@@ -1,7 +1,12 @@
 package com.hanz.domain.mbs;
 
-public class S9supplier {
-    private Integer pgsId;
+import java.io.Serializable;
+
+public class S9supplier implements Serializable{
+
+	private static final long serialVersionUID = 2672315396607584897L;
+
+	private Integer pgsId;
 
     private String pgsCode;
 
